@@ -1,72 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reclamos por Fraude - Hegemonía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reclamos por Fraude - Hegemonía</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-<body class="bg-gray-100 font-sans">
-  <div class="max-w-xl mx-auto p-8 bg-white mt-10 shadow-md rounded-lg">
-    <h1 class="text-2xl font-bold mb-4 text-center text-blue-600">
-      Formulario de Reclamo por Fraude
-    </h1>
-    <form id="reclamoForm">
-      <div class="mb-4">
-        <label class="block text-sm font-medium">Nombre completo</label>
-        <input type="text" name="nombre" required class="w-full p-2 border rounded" />
+      .fade-in-up {
+        animation: fadeUp 0.6s ease-out;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4">
+
+    <div class="w-full max-w-xl p-8 bg-white shadow-2xl rounded-2xl border border-slate-300 fade-in-up">
+
+      <!-- Logo simulado -->
+      <div class="flex justify-center mb-4">
+        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-md">
+          H
+        </div>
       </div>
 
-      <div class="mb-4">
-        <label class="block text-sm font-medium">DNI o CUIT</label>
-        <input type="text" name="dni" required class="w-full p-2 border rounded" />
+      <h1 class="text-2xl font-semibold text-center text-slate-800 mb-6">
+        Formulario de Reclamo por Fraude
+      </h1>
+
+      <form id="reclamoForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-slate-700">Nombre completo</label>
+          <input type="text" name="nombre" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">DNI o CUIT</label>
+          <input type="text" name="dni" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">Correo electrónico</label>
+          <input type="email" name="email" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">Teléfono</label>
+          <input type="tel" name="telefono" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">¿Qué te pasó?</label>
+          <select name="tipo" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">Seleccioná una opción</option>
+            <option>Me sacaron plata sin autorización</option>
+            <option>Me pidieron datos por WhatsApp o llamada</option>
+            <option>Toqué un link y puse mis datos</option>
+            <option>Compré algo y nunca me lo dieron</option>
+            <option>Otro problema</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">Contanos qué pasó</label>
+          <textarea name="descripcion" rows="4" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700">Adjuntar archivo (opcional)</label>
+          <input type="file" name="archivo" accept=".jpg,.jpeg,.png,.pdf" class="w-full mt-1 p-2" />
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition duration-150">
+          Enviar reclamo
+        </button>
+      </form>
+
+      <div id="mensajeGracias" class="mt-6 text-green-600 text-center font-medium text-lg hidden">
+        ¡Gracias! Tu reclamo fue enviado correctamente.
       </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium">Correo electrónico</label>
-        <input type="email" name="email" required class="w-full p-2 border rounded" />
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium">Teléfono</label>
-        <input type="tel" name="telefono" required class="w-full p-2 border rounded" />
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium">¿Qué te pasó?</label>
-        <select name="tipo" required class="w-full p-2 border rounded">
-          <option value="">Seleccioná una opción</option>
-          <option>Me sacaron plata sin autorización</option>
-          <option>Me pidieron datos por WhatsApp o llamada</option>
-          <option>Toqué un link y puse mis datos</option>
-          <option>Compré algo y nunca me lo dieron</option>
-          <option>Otro problema</option>
-        </select>
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium">Contanos qué pasó</label>
-        <textarea name="descripcion" rows="4" required class="w-full p-2 border rounded"></textarea>
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-medium">Adjuntar archivo (opcional)</label>
-        <input type="file" name="archivo" accept=".jpg,.jpeg,.png,.pdf" class="w-full p-2" />
-      </div>
-
-      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">
-        Enviar reclamo
-      </button>
-    </form>
-
-    <div id="mensajeGracias" class="mt-4 text-green-600 font-semibold hidden text-center">
-      ¡Gracias! Tu reclamo fue enviado correctamente.
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
