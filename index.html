@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reclamos por Fraude - Hegemonía</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  Hello world
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-xl mx-auto p-8 bg-white mt-10 shadow-md rounded-lg">
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-600">
+      Formulario de Reclamo por Fraude
+    </h1>
+    <form id="reclamoForm">
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Nombre completo</label>
+        <input type="text" name="nombre" required class="w-full p-2 border rounded" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">DNI o CUIT</label>
+        <input type="text" name="dni" required class="w-full p-2 border rounded" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Correo electrónico</label>
+        <input type="email" name="email" required class="w-full p-2 border rounded" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Teléfono</label>
+        <input type="tel" name="telefono" required class="w-full p-2 border rounded" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">¿Qué te pasó?</label>
+        <select name="tipo" required class="w-full p-2 border rounded">
+          <option value="">Seleccioná una opción</option>
+          <option>Me sacaron plata sin autorización</option>
+          <option>Me pidieron datos por WhatsApp o llamada</option>
+          <option>Toqué un link y puse mis datos</option>
+          <option>Compré algo y nunca me lo dieron</option>
+          <option>Otro problema</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Contanos qué pasó</label>
+        <textarea name="descripcion" rows="4" required class="w-full p-2 border rounded"></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Adjuntar archivo (opcional)</label>
+        <input type="file" name="archivo" accept=".jpg,.jpeg,.png,.pdf" class="w-full p-2" />
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">
+        Enviar reclamo
+      </button>
+    </form>
+
+    <div id="mensajeGracias" class="mt-4 text-green-600 font-semibold hidden text-center">
+      ¡Gracias! Tu reclamo fue enviado correctamente.
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
