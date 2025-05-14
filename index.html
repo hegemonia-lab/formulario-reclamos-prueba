@@ -9,63 +9,42 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-      }
-
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-in-up {
-        animation: fadeUp 0.6s ease-out;
+        background-color: #0f0f0f;
       }
     </style>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4">
+  <body class="min-h-screen flex items-center justify-center px-4 py-12">
 
-    <div class="w-full max-w-xl p-8 bg-white shadow-2xl rounded-2xl border border-slate-300 fade-in-up">
+    <div class="w-full max-w-xl p-8 bg-neutral-900 text-white rounded-xl border border-neutral-700 shadow-md">
 
-      <!-- Logo simulado -->
-      <div class="flex justify-center mb-4">
-        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-md">
-          H
-        </div>
-      </div>
-
-      <h1 class="text-2xl font-semibold text-center text-slate-800 mb-6">
-        Formulario de Reclamo por Fraude
+      <h1 class="text-3xl font-semibold text-center text-white mb-8">
+        Formulario de <span class="text-red-500">Reclamo</span> por Fraude
       </h1>
 
-      <form id="reclamoForm" class="space-y-5">
+      <form id="reclamoForm" class="space-y-6">
         <div>
-          <label class="block text-sm font-medium text-slate-700">Nombre completo</label>
-          <input type="text" name="nombre" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-sm font-medium text-neutral-300">Nombre completo</label>
+          <input type="text" name="nombre" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">DNI o CUIT</label>
-          <input type="text" name="dni" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-sm font-medium text-neutral-300">DNI o CUIT</label>
+          <input type="text" name="dni" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">Correo electrónico</label>
-          <input type="email" name="email" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-sm font-medium text-neutral-300">Correo electrónico</label>
+          <input type="email" name="email" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">Teléfono</label>
-          <input type="tel" name="telefono" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-sm font-medium text-neutral-300">Teléfono</label>
+          <input type="tel" name="telefono" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">¿Qué te pasó?</label>
-          <select name="tipo" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <label class="block text-sm font-medium text-neutral-300">¿Qué te pasó?</label>
+          <select name="tipo" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="">Seleccioná una opción</option>
             <option>Me sacaron plata sin autorización</option>
             <option>Me pidieron datos por WhatsApp o llamada</option>
@@ -76,21 +55,21 @@
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">Contanos qué pasó</label>
-          <textarea name="descripcion" rows="4" required class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <label class="block text-sm font-medium text-neutral-300">Contanos qué pasó</label>
+          <textarea name="descripcion" rows="4" required class="w-full mt-1 p-2 rounded-md bg-neutral-800 border border-neutral-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700">Adjuntar archivo (opcional)</label>
-          <input type="file" name="archivo" accept=".jpg,.jpeg,.png,.pdf" class="w-full mt-1 p-2" />
+          <label class="block text-sm font-medium text-neutral-300">Adjuntar archivo (opcional)</label>
+          <input type="file" name="archivo" accept=".jpg,.jpeg,.png,.pdf" class="w-full mt-1 p-2 text-white" />
         </div>
 
-        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition duration-150">
+        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition">
           Enviar reclamo
         </button>
       </form>
 
-      <div id="mensajeGracias" class="mt-6 text-green-600 text-center font-medium text-lg hidden">
+      <div id="mensajeGracias" class="mt-6 text-green-400 text-center font-medium text-lg hidden">
         ¡Gracias! Tu reclamo fue enviado correctamente.
       </div>
     </div>
